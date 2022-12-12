@@ -1,0 +1,153 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ffecbf;
+  color: #000;
+  font-family: 'Open Sans', 'Trebuchet MS', sans-serif;
+  margin: 0;
+}
+
+#mainContainer {
+  max-width: 800px; /* keep */
+  margin: auto; /* keep */
+  display: grid; /* keep */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, auto);
+  grid-template-areas:
+      "header header header header"
+      "genAmenities ballSports aquatics otherActivities"
+      "genAmenities ballSports aquatics otherActivities"
+      "naplesMap naplesMap naplesMap selectedCriteria"
+      "naplesMap naplesMap naplesMap selectedCriteria"
+      "naplesMap naplesMap naplesMap selectedCriteria"
+      "naplesMap naplesMap naplesMap selectedCriteria"
+      "naplesMap naplesMap naplesMap submitButton"
+      "parkDescription parkDescription parkDescription parkDetails"
+      "footer footer footer footer";
+}
+
+header {
+    grid-area: header;
+    background: #fff;
+    padding: 3rem 1.5rem 3rem 1.5rem;
+    text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.parkCategoryContainer {
+  background: grey;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.parkCategoryContainer div {
+  flex: 1 1 auto;
+  border: 1px solid #000;
+  padding: 0.15rem 0 0.15rem 0.75rem;
+  cursor: pointer;
+}
+
+#genAmenities {
+  grid-area: genAmenities;
+}
+
+#ballSports {
+  grid-area: ballSports;
+}
+
+#aquatics {
+  grid-area: aquatics;
+}
+
+#otherActivities {
+  grid-area: otherActivities;
+}
+
+#naplesMap {
+  grid-area: naplesMap;
+  height: 460px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;
+  margin: 0;
+}
+
+#selectedCriteria {
+  grid-area: selectedCriteria;
+  background: lightgrey;
+}
+
+#submitButton {
+  grid-area: submitButton;
+  background: linear-gradient(90deg, rgba(0,149,81,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+#parkDescription {
+  grid-area: parkDescription;
+  background: skyblue;
+}
+
+#parkDetails {
+  grid-area: parkDetails;
+  background: lightblue;
+}
+
+#parkDetails li {
+  list-style-type: none;
+}
+
+.selectedOption {
+  background: green;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* How to change Leaflet marker icon color, presented by sil: https://hungchienhsiang.medium.com/super-simple-way-to-change-leaflet-marker-color-7efd0996c797 */
+img.huechange {
+  filter: hue-rotate(120deg);
+}
+
+a {
+    color: #004A9E;
+}
+
+a:hover {
+    color: #0077FF;
+    text-decoration: none;
+}
+
+/* Changes this once normal layout done */
+@media screen and (max-width: 10px) {
+  #container {
+    padding: 1rem 0 1rem 0;
+  }
+
+  header {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  p {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .map {
+    height: 600px;
+    width: 100%;
+    margin-top: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;
+  }
+}
