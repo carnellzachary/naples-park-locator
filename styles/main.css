@@ -8,56 +8,126 @@ html {
 }
 
 body {
-  background: #ffecbf;
+  background: #fff;
   color: #000;
-  font-family: 'Open Sans', 'Trebuchet MS', sans-serif;
+  font-family: 'Kurale', 'Georgia', serif;
   margin: 0;
-}
-
-#mainContainer {
-  max-width: 800px; /* keep */
-  margin: auto; /* keep */
-  display: grid; /* keep */
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(10, auto);
-  grid-template-areas:
-      "header header header header"
-      "genAmenities ballSports aquatics otherActivities"
-      "genAmenities ballSports aquatics otherActivities"
-      "naplesMap naplesMap naplesMap selectedCriteria"
-      "naplesMap naplesMap naplesMap selectedCriteria"
-      "naplesMap naplesMap naplesMap selectedCriteria"
-      "naplesMap naplesMap naplesMap selectedCriteria"
-      "naplesMap naplesMap naplesMap submitButton"
-      "parkDescription parkDescription parkDescription parkDetails"
-      "footer footer footer footer";
-}
-
-header {
-    grid-area: header;
-    background: #fff;
-    padding: 3rem 1.5rem 3rem 1.5rem;
-    text-align: center;
 }
 
 h1 {
   margin: 0;
   padding: 0;
-  text-align: center;
+  font-family: 'Acme', 'Trebuchet MS', sans-serif;
 }
 
-.parkCategoryContainer {
-  background: grey;
+#mainContainer {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "headerLogo headerBanner headerBanner headerBanner headerBanner headerBanner"
+    "genAmenities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "ballSports naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "aquatics naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "otherActivities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "footer footer footer footer footer footer";
+}
+
+#mainContainer.mainContainerShowDesc {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "headerBanner parkDescription parkDescription parkDescription parkDescription parkDetails"
+    "genAmenities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "ballSports naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "aquatics naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "otherActivities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "footer footer footer footer footer footer";
+}
+
+
+#headerBanner {
+  grid-area: headerBanner;
+  margin: 0;
+  padding: 1rem;
+  background: #fff;
+}
+
+#headerBanner h1 {
+  text-align: left;
+  margin: 0;
+  font-size: 4rem;
+  color: #336699;
+}
+
+#headerBanner p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#headerLogo {
+  grid-area: headerLogo;
+  margin: 0;
+  padding: 0;
+}
+
+#parkDescription {
+  grid-area: parkDescription;
+  padding: 0 1rem 0 1rem;
+  margin: 0;
+  background: skyblue;
+}
+
+#parkDetails {
+  grid-area: parkDetails;
+  background: lightblue;
+}
+
+#parkDetails li {
+  list-style-type: none;
+}
+
+.parkCategoryBox {
+  background: #336699;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 
-.parkCategoryContainer div {
+.parkCategoryBox p {
   flex: 1 1 auto;
   border: 1px solid #000;
-  padding: 0.15rem 0 0.15rem 0.75rem;
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+  font-family: 'Acme', 'Trebuchet MS', sans-serif;
+}
+
+.parkCategoryBox div {
+  flex: 1 1 auto;
+  border: 1px solid #000;
+  padding: 0.25rem 0 0.25rem 0;
+  margin: 0;
+  text-align: center;
   cursor: pointer;
+  background: linear-gradient(0deg, rgba(255,222,126,1) 0%, rgba(255,239,164,1) 100%);
+  color: #336699;
+}
+
+.parkCategoryBox div:active {
+  background: linear-gradient(0deg, rgba(250,215,112,1) 0%, rgba(251,240,201,1) 50%, rgba(249,214,113,1) 100%);
+}
+
+.selectedOption {
+  background: linear-gradient(0deg, rgba(255,230,141,1) 0%, rgba(234,255,188,1) 49%, rgba(112,247,201,1) 100%) !important;
 }
 
 #genAmenities {
@@ -78,42 +148,15 @@ h1 {
 
 #naplesMap {
   grid-area: naplesMap;
-  height: 460px;
+  min-height: 800px;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;
   margin: 0;
 }
 
-#selectedCriteria {
-  grid-area: selectedCriteria;
-  background: lightgrey;
-}
-
-#submitButton {
-  grid-area: submitButton;
-  background: linear-gradient(90deg, rgba(0,149,81,1) 0%, rgba(0,212,255,1) 100%);
-}
-
-#parkDescription {
-  grid-area: parkDescription;
-  background: skyblue;
-}
-
-#parkDetails {
-  grid-area: parkDetails;
-  background: lightblue;
-}
-
-#parkDetails li {
-  list-style-type: none;
-}
-
-.selectedOption {
-  background: green;
-}
-
 footer {
   grid-area: footer;
+  text-align: center;
 }
 
 /* How to change Leaflet marker icon color, presented by sil: https://hungchienhsiang.medium.com/super-simple-way-to-change-leaflet-marker-color-7efd0996c797 */
@@ -122,12 +165,12 @@ img.huechange {
 }
 
 a {
-    color: #004A9E;
+  color: #004A9E;
 }
 
 a:hover {
-    color: #0077FF;
-    text-decoration: none;
+  color: #0077FF;
+  text-decoration: none;
 }
 
 /* Changes this once normal layout done */

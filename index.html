@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Kurale&display=swap" rel="stylesheet">
 
   <!--Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
@@ -21,20 +21,27 @@
 <body>
   <div id="mainContainer">
 
-    <header>
+    <img id="headerLogo" src="images/npf-logo.jpg">
+    <div id="headerBanner">
       <h1>Naples Park Finder</h1>
-    </header>
+      <p>Find the perfect park in Naples, Florida, for you</p>
+    </div>
 
-    <!-- Make each category a list? -->
+    <div id="parkDescription"></div>
+    <div id="parkDetails"></div>
 
-    <div id="genAmenities" class="parkCategoryContainer">
+    <div id="naplesMap"></div>
+
+    <div id="genAmenities" class="parkCategoryBox">
+        <p>AMENITIES</p>
         <div value="food" onclick="parkOptionClick(event)"><span><i class="fa-sharp fa-solid fa-burger-soda"></i> </span>Food</div>
         <div value="bathroom" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-toilet"></i> </span>Bathroom</div>
         <div value="picnic" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-table-picnic"></i> </span>Picnic Area</div>
         <div value="parking" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-circle-parking"></i> </span>Parking</div>
         <div value="handicapac" onclick="parkOptionClick(event)"><span><i class="fa-brands fa-accessible-icon"></i> </span>Accessability</div>
     </div>
-    <div id="ballSports" class="parkCategoryContainer">
+    <div id="ballSports" class="parkCategoryBox">
+        <p>BALL SPORTS</p>
         <div value="baseball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-baseball-bat-ball"></i></i> </span>Baseball</div>
         <div value="basketball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-basketball"></i> </span>Basketball</div>
         <div value="pickleball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-pickleball"></i> </span>Pickleball</div>
@@ -42,14 +49,16 @@
         <div value="tennis" onclick="parkOptionClick(event)"><span><i class="fa-regular fa-racquet"></i> </span>Tennis</div>
         <div value="volleyball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-volleyball"></i> </span>Volleyball</div>
     </div>
-    <div id="aquatics" class="parkCategoryContainer">
+    <div id="aquatics" class="parkCategoryBox">
+        <p>AQUATICS</p>
         <div value="fishing" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-fishing-rod"></i> </span>Fishing</div>
         <div value="boating" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-ship"></i> </span>Boating</div>
         <div value="swimming" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-person-swimming"></i> </span>Swimming</div>
         <div value="waterfeature" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-sprinkler"></i> </span>Water Feature</div>
         <div value="beach" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-umbrella-beach"></i> </span>Beach</div>
     </div>
-    <div id="otherActivities" class="parkCategoryContainer">
+    <div id="otherActivities" class="parkCategoryBox">
+        <p>ACTIVITIES</p>
         <div value="playground" onclick="parkOptionClick(event)"><span><i class="fas fa-spinner"></i> </span>Playground</div>
         <div value="hiking" onclick="parkOptionClick(event)"><span><i class="fas fa-spinner"></i> </span>Hiking</div>
         <div value="biking" onclick="parkOptionClick(event)"><span><i class="fas fa-spinner"></i> </span>Biking</div>
@@ -57,21 +66,19 @@
         <div value="shuffleboard" onclick="parkOptionClick(event)"><span><i class="fas fa-spinner"></i> </span>Shuffleboard</div>
     </div>
 
-    <div id="naplesMap"></div>
-
-    <div id="selectedCriteria" class="parkCategoryContainer"></div>
-    <div id="submitButton" onclick="repopulateMap()">Find Parks</div>
-
-    <div id="parkDescription"></div>
-    <div id="parkDetails"></div>
-
-    <footer></footer>
+    <footer>
+      <p>Created by Zachary Carnell for an assignment from University of Florida. Header logo created by Zachary Carnell using images from blah and blah.</p>
+    </footer>
 
   </div>
 
-  <!-- Scripts -->
+  <!-- Leaflet: https://leafletjs.com/ -->
   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+  <!-- FontAwesome for icons: https://fontawesome.com -->
   <script src="https://kit.fontawesome.com/2207c11ed1.js" crossorigin="anonymous"></script>
+
+  <!-- My scripts -->
   <script src="scripts/places.js"></script>
   <script src="scripts/main.js"></script>
 
