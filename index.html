@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Naples Park Finder</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Kurale&display=swap" rel="stylesheet">
+
+  <!--Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div id="mainContainer">
+
+    <img id="headerLogo" src="images/npf-logo.jpg" alt="This is an image of a palm tree on a beach in front of the sun.">
+    <div id="headerBanner">
+      <h1>Naples Park Finder</h1>
+      <p>Find the perfect park in Naples, Florida, for you</p>
+    </div>
+
+    <div id="naplesMap"></div>
+
+    <div id="genAmenities" class="parkCategoryBox">
+        <p>AMENITIES</p>
+        <div id="food" onclick="parkOptionClick(event)"><span><i class="fa-sharp fa-solid fa-burger-soda"></i> </span>Food</div>
+        <div id="bathroom" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-toilet"></i> </span>Bathroom</div>
+        <div id="picnic" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-table-picnic"></i> </span>Picnic Area</div>
+        <div id="parking" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-circle-parking"></i> </span>Parking</div>
+        <div id="handicapac" onclick="parkOptionClick(event)"><span><i class="fa-brands fa-accessible-icon"></i> </span>Accessibility</div>
+    </div>
+    <div id="ballSports" class="parkCategoryBox">
+        <p>BALL SPORTS</p>
+        <div id="baseball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-baseball-bat-ball"></i> </span>Baseball</div>
+        <div id="basketball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-basketball"></i> </span>Basketball</div>
+        <div id="pickleball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-pickleball"></i> </span>Pickleball</div>
+        <div id="soccer" onclick="parkOptionClick(event)"><span><i class="fa-regular fa-futbol"></i> </span>Soccer</div>
+        <div id="tennis" onclick="parkOptionClick(event)"><span><i class="fa-regular fa-racquet"></i> </span>Tennis</div>
+        <div id="volleyball" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-volleyball"></i> </span>Volleyball</div>
+    </div>
+    <div id="aquatics" class="parkCategoryBox">
+        <p>AQUATICS</p>
+        <div id="fishing" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-fishing-rod"></i> </span>Fishing</div>
+        <div id="boating" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-ship"></i> </span>Boating</div>
+        <div id="swimming" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-person-swimming"></i> </span>Swimming</div>
+        <div id="waterfeature" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-sprinkler"></i> </span>Water Feature</div>
+        <div id="beach" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-umbrella-beach"></i> </span>Beach</div>
+    </div>
+    <div id="otherActivities" class="parkCategoryBox">
+        <p>ACTIVITIES</p>
+        <div id="playground" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-bench-tree"></i> </span>Playground</div>
+        <div id="hiking" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-person-hiking"></i> </span>Hiking</div>
+        <div id="biking" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-bicycle"></i> </span>Biking</div>
+        <div id="fitness" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-dumbbell"></i> </span>Fitness Center</div>
+        <div id="shuffleboard" onclick="parkOptionClick(event)"><span><i class="fa-solid fa-hockey-puck"></i> </span>Shuffleboard</div>
+    </div>
+
+    <footer>
+      <p>This web application was created by Zachary Carnell for an assignment from the University of Florida.<br>Icons are from <a href="https://fontawesome.com/license/free">FontAwesome</a>, and the header logo was created by Zachary Carnell using images from <a href="https://pixabay.com/service/license/">Pixabay</a> users <a href="https://pixabay.com/illustrations/sun-hot-outdoor-sunshine-sunrise-2816097/">Kidaha</a> and <a href="https://pixabay.com/vectors/coconut-tree-palm-tree-dune-tree-1892861/">95C</a>.</p>
+    </footer>
+
+  </div>
+
+  <!-- Leaflet: https://leafletjs.com/ -->
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+  <!-- FontAwesome for icons: https://fontawesome.com -->
+  <script src="https://kit.fontawesome.com/fbaa0abdbb.js" crossorigin="anonymous"></script>
+
+  <!-- My scripts -->
+  <script src="scripts/markers.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+
+</html>

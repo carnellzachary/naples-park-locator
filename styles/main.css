@@ -1,0 +1,306 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: 'Kurale', 'Georgia', serif;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Acme', 'Trebuchet MS', sans-serif;
+}
+
+#mainContainer {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "headerLogo headerBanner headerBanner headerBanner headerBanner headerBanner"
+    "genAmenities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "ballSports naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "aquatics naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "otherActivities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "footer footer footer footer footer footer";
+}
+
+
+#headerBanner {
+  grid-area: headerBanner;
+  margin: 0;
+  padding: 1rem;
+  background: #fff;
+}
+
+#headerBanner h1 {
+  text-align: left;
+  margin: 0;
+  font-size: 4rem;
+  color: #336699;
+}
+
+#headerBanner p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#headerLogo {
+  grid-area: headerLogo;
+  margin: 0;
+  padding: 0;
+}
+
+#parkDescription {
+  grid-area: parkDescription;
+  padding: 0 1rem 0 1rem;
+  margin: 0;
+  background: skyblue;
+}
+
+#parkDetails {
+  grid-area: parkDetails;
+  background: lightblue;
+}
+
+#parkDetails li {
+  list-style-type: none;
+}
+
+.parkCategoryBox {
+  background: #336699;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.parkCategoryBox p {
+  flex: 1 1 auto;
+  border: 1px solid #000;
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+  font-family: 'Acme', 'Trebuchet MS', sans-serif;
+}
+
+.parkCategoryBox div {
+  flex: 1 1 auto;
+  border: 1px solid #000;
+  padding: 0.25rem 0 0.25rem 0;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(0deg, rgba(255,247,218,1) 0%, rgba(255,239,164,1) 100%);
+  color: #336699;
+}
+
+.parkCategoryBox div:hover {
+  transform: scale(1.05);
+}
+
+.parkCategoryBox div:active {
+  transform: scale(0.95);
+  background: linear-gradient(0deg, rgba(250,215,112,1) 0%, rgba(251,240,201,1) 50%, rgba(249,214,113,1) 100%);
+}
+
+.selectedOption {
+  background: linear-gradient(0deg, rgba(255,230,141,1) 0%, rgba(234,255,188,1) 49%, rgba(112,247,201,1) 100%) !important;
+}
+
+.selectedOption:hover {
+  transform: scale(1) !important;
+}
+
+.selectedOption:active {
+  transform: scale(0.95) !important;
+}
+
+#genAmenities {
+  grid-area: genAmenities;
+}
+
+#ballSports {
+  grid-area: ballSports;
+}
+
+#aquatics {
+  grid-area: aquatics;
+}
+
+#otherActivities {
+  grid-area: otherActivities;
+}
+
+#naplesMap {
+  grid-area: naplesMap;
+  min-height: 800px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 10px;
+  margin: 0;
+}
+
+/* Leaflet Animation code from stackoverflow user iH8: https://stackoverflow.com/questions/27028927/fade-in-leaflet-markers-when-added */
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  -webkit-animation: fadein 0.95s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.95s; /* Firefox < 16 */
+  -ms-animation: fadein 0.95s; /* Internet Explorer */
+  -o-animation: fadein 0.95s; /* Opera < 12.1 */
+  animation: fadein 0.95s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+/* How to change Leaflet marker icon color, presented by sil: https://hungchienhsiang.medium.com/super-simple-way-to-change-leaflet-marker-color-7efd0996c797 */
+img.huechange {
+  filter: hue-rotate(300deg);
+}
+
+a {
+  color: #004A9E;
+}
+
+a:hover {
+  color: #0077FF;
+  text-decoration: none;
+}
+
+#mainContainer {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "headerLogo headerBanner headerBanner headerBanner headerBanner headerBanner"
+    "genAmenities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "ballSports naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "aquatics naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "otherActivities naplesMap naplesMap naplesMap naplesMap naplesMap"
+    "footer footer footer footer footer footer";
+}
+
+@media screen and (max-width: 1010px) {
+  #mainContainer {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "headerLogo headerBanner headerBanner headerBanner"
+      "naplesMap naplesMap naplesMap naplesMap"
+      "naplesMap naplesMap naplesMap naplesMap"
+      "naplesMap naplesMap naplesMap naplesMap"
+      "genAmenities ballSports aquatics otherActivities"
+      "footer footer footer footer";
+  }
+
+  #headerBanner h1 {
+    text-align: left;
+    margin: 0;
+    font-size: 4rem;
+    color: #336699;
+  }
+
+  #headerBanner p {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  #naplesMap {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #mainContainer {
+    max-width: 750px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+      "headerBanner headerBanner headerBanner headerBanner"
+      "naplesMap naplesMap naplesMap naplesMap"
+      "naplesMap naplesMap naplesMap naplesMap"
+      "naplesMap naplesMap naplesMap naplesMap"
+      "genAmenities genAmenities ballSports ballSports"
+      "aquatics aquatics otherActivities otherActivities"
+      "footer footer footer footer";
+  }
+
+  #headerLogo {
+    display: none;
+  }
+
+  #headerBanner h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    color: #336699;
+  }
+
+  #headerBanner p {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  #naplesMap {
+    min-height: 500px;
+    margin-bottom: 1.5rem;
+  }
+
+  footer {
+    padding: 0.75rem;
+    font-size: 0.90rem;
+  }
+}
